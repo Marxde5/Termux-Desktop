@@ -34,7 +34,7 @@ echo "VNC server started. The default password is the account password for $USER
 
 chmod +x $PREFIX/bin/vnc
 
-echo "You can now start vncserver by running tstart"
+echo "You can now start vncserver by running vncstart"
 echo " "
 echo "It will ask you to enter a password when first time starting it."
 echo " "
@@ -48,9 +48,9 @@ echo " "
 echo "Running vncstart"
 echo " "
 echo " "
-echo "To Kill VNC Server just run tstop"
+echo "To Kill VNC Server just run vncstop"
 echo " "
 echo " "
 
 vncpasswd
-tstart
+vncstart
