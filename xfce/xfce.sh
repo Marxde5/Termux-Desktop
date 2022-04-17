@@ -43,8 +43,8 @@ echo " "
 echo " "
 echo " "
 
-echo "export DISPLAY=":1"" >> /etc/profile
-source /etc/profile
+
+
 
 vncpasswd
 vncstart
