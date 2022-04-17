@@ -1,0 +1,58 @@
+#!/bin/bash
+
+export USER=$(whoami)
+HEIGHT=0
+WIDTH=0
+CHOICE_HEIGHT=6
+BACKTITLE="Pilih resolusi Linux vncserver"
+TITLE="vncserver-start"
+MENU="Pilih salah satu:"
+export PORT=1
+
+OPTIONS=(1 "Automatis/dynamic"
+         2 "Potrait 610 x 1140"
+         3 "Potrait 680 x 1400"
+         4 "Lanscape HD 1400 x 680"
+         5 "Lanscape FHD 2200 x 1080"
+         6 "Resolusi dan port manual")
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+        1)
+            echo "Resolusi dinamis"
+            GEO="" vnc
+            ;;
+        2)
+            echo "Potrait 610 x 1250"
+            GEO="-geometry 610x1140" vnc
+            ;;
+        3)
+            echo "Potrait 680 x 1400"
+            GEO="-geometry 680x1400" vnc
+            ;;
+        4)
+            echo "Lanscape HD 1400 x 680"
+            GEO="-geometry 1400x680" vnc
+            ;;
+        5)
+            echo "Lanscape FHD 2200 x 1080"
+            GEO="-geometry 2200x1080" vnc
+            ;;
+        6)
+            echo "Resolusi dan port manual"
+            echo "Masukkan resolusi dalam format WIDTHxHEIGHT i.e 1920x1080"
+            read custom
+            echo "Masukkan port i.e 2"
+            read port
+            GEO="-geometry $custom" PORT=$port vnc
+            ;;
+esac
+

@@ -1,0 +1,3 @@
+#!/bin/bash
+vncserver -localhost $GEO :$PORT -xstartup /usr/bin/startxfce4
+echo "VNC server started. The default password is the account password for $USER"

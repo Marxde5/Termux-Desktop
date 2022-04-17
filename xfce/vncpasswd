@@ -1,0 +1,5 @@
+#!/bin/bash
+read -sp 'Masukkan Katasandi VNC baru!: ' PASSWORD
+/usr/bin/vncpasswd -f <<<"$PASSWORD"$'\n'"$PASSWORD" > $HOME/.vnc/passwd
+echo "Katasandi : $PASSWORD" 
+echo "Katasandi untuk VNC telah diganti!"
