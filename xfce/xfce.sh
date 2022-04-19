@@ -1,6 +1,6 @@
 #!/bin/bash
 #Get the necessary components
-link="https://github.com/MryulisD5/X10D5/blob/main"
+link="https://github.com/MarxD5/X10D5/blob/main"
 
 sudo apt-get update
 sudo apt install udisks2 -y
@@ -42,9 +42,6 @@ echo "To Kill VNC Server just run vncstop"
 echo " "
 echo " "
 echo " "
-
-
-
 
 vncpasswd
 vncstart
