@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-link="https://github.com/MarxD5/X10D5/blob/main"
+link="https://raw.githubusercontent.com/MarxD5/X10D5/main"
 pkg install wget -y
 pkg install proot-distro
 proot-distro install ubuntu
