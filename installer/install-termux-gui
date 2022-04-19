@@ -20,22 +20,11 @@ twm &
 startxfce4 &" >> $HOME/.vnc/xstartup
 chmod +x $HOME/.vnc/xstartup
 
-wget -q $link/xfce/vncpasswd -P $PREFIX/bin
-wget -q $link/xfce/vncstart -P $PREFIX/bin
-wget -q $link/xfce/vncstop -P $PREFIX/bin
-
 echo "#!/data/data/com.termux/files/usr/bin/bash
 vncserver -localhost  $GEO :$PORT
 VNC server started. The default password is the account password for $USER" >> $PREFIX/bin/vnc
 
 echo "#!/data/data/com.termux/files/usr/bin/bash
-read -sp 'Masukkan Katasandi VNC baru!: ' PASSWORD
-/usr/bin/vncpasswd -f <<<"$PASSWORD"$'\n'"$PASSWORD" > $HOME/.vnc/passwd
-echo "Katasandi : $PASSWORD"
-echo "Katasandi untuk VNC telah diganti!"" >>$PREFIX/bin/vncpasswd
-
-echo "#!/data/data/com.termux/files/usr/bin/bash
-
 export USER=$(whoami)
 HEIGHT=0
 WIDTH=0
@@ -93,20 +82,14 @@ case $CHOICE in
 esac" >>$PREFIX/bin/tstart
 
 echo "#!/data/data/com.termux/files/usr/bin/bash
-
 USER=$(whoami)
 vncserver -list
 echo "Mematikan Server VNC"
-echo -n "Masukkan port yang ingin dimatikan (ex :2): "
-read pt
-echo " "
-echo "Mematikan port $pt"
-vncserver -kill :$pt
-rm -rf /tmp/.X$pt-lock
-rm -rf /tmp/.X11-unix/X$pt" >>$PREFIX/bin/tstop
+vncserver -kill :1
+rm -rf /tmp/.X1-lock
+rm -rf /tmp/.X11-unix/X1" >>$PREFIX/bin/tstop
 
 chmod +x $PREFIX/bin/vnc
-chmod +x $PREFIX/bin/vncpasswd
 chmod +x $PREFIX/bin/tstart
 chmod +x $PREFIX/bin/tstop
 
@@ -121,7 +104,7 @@ echo " "
 echo "Hubungkan ke alamat ini akan membuka jendela dengan Lingkungan Desktop Xfce4"
 echo " "
 echo " "
-echo "Menjalankan vncstart"
+echo "Menjalankan tstart"
 echo " "
 echo " "
 echo "Untuk Membunuh Server VNC jalankan tstop"
