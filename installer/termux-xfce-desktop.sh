@@ -21,34 +21,32 @@ twm &
 startxfce4 &" >> .vnc/xstartup
 chmod +x .vnc/xstartup
 
-wget -q $link/xfce/vncpasswd -P $PREFIX/bin
 wget -q $link/xfce/vncstart -P $PREFIX/bin
 wget -q $link/xfce/vncstop -P $PREFIX/bin
-chmod +x $PREFIX/bin/vncpasswd
 chmod +x $PREFIX/bin/vncstart
 chmod +x $PREFIX/bin/vncstop
 
 echo "#!/data/data/com.termux/files/usr/bin/bash
 vncserver -localhost  $GEO :$PORT
-echo "VNC server started. The default password is the account password for $USER" >> $PREFIX/bin
+echo "VNC server started. The default password is the account password for $USER" >> $PREFIX/bin/vnc
 
 chmod +x $PREFIX/bin/vnc
 
-echo "You can now start vncserver by running vncstart"
+echo "Anda sekarang dapat memulai vncserver dengan menjalankan tstart"
 echo " "
-echo "It will ask you to enter a password when first time starting it."
+echo "Ini akan meminta Anda untuk memasukkan kata sandi saat pertama kali memulainya."
 echo " "
-echo "The VNC Server will be started at 127.0.0.1:5901"
+echo "Server VNC akan dimulai pada 127.0.0.1:5901"
 echo " "
-echo "You can connect to this address with a VNC Viewer you prefer"
+echo "Anda dapat terhubung ke alamat ini dengan VNC Viewer yang Anda inginkan"
 echo " "
-echo "Connect to this address will open a window with Xfce4 Desktop Environment"
-echo " "
-echo " "
-echo "Running vncstart"
+echo "Hubungkan ke alamat ini akan membuka jendela dengan Lingkungan Desktop Xfce4"
 echo " "
 echo " "
-echo "To Kill VNC Server just run vncstop"
+echo "Menjalankan vncstart"
+echo " "
+echo " "
+echo "Untuk Membunuh Server VNC jalankan tstop"
 echo " "
 echo " "
 
