@@ -1,6 +1,6 @@
 #!/bin/bash
 #Get the necessary components
-link="https://github.com/MarxD5/X10D5/blob/main"
+link="https://raw.githubusercontent.com/MarxD5/X10D5/main"
 
 sudo apt-get update
 sudo apt install udisks2 -y
