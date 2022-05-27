@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-link="https://github.com/MarxD5/X10D5/blob/main"
+link="https://raw.githubusercontent.com/Marxde5/Termux-Desktop/main"
 pkg update -y && pkg upgrade
 pkg install x11-repo
 pkg install wget
