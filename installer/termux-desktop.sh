@@ -1,5 +1,19 @@
-#!/data/data/com.termux/files/usr/bin/bash
-link="https://raw.githubusercontent.com/Marxde5/Termux-Desktop/main"
+#!/bin/bash
+
+link="https://raw.githubusercontent.com/Marxde5/Termux-Desktop/main"                                                                 R="$(printf '\033[1;31m')"
+
+G="$(printf '\033[1;32m')"                                                                      Y="$(printf '\033[1;33m')"
+B="$(printf '\033[1;34m')"                                                                      C="$(printf '\033[1;36m')"
+W="$(printf '\033[1;37m')"
+
+banner() {                                                                                          clear
+    printf ${C}"██      ██  █████  ██████  ██     ██     ${B}██████  ███████ ██████  \n"
+    printf ${C}"████  ████ ██   ██ ██   ██   ██ ██       ${B}██   ██ ██      ██      \n"
+    printf ${C}"██  ██  ██ ██ █ ██ █████      ███   ${R}████ ${B}██   ██ ██████  ██████  \n"
+    printf ${C}"██      ██ ███████ ██  ██    ██ ██       ${B}██   ██ ██           ██ \n"
+    printf ${C}"██      ██ ██   ██ ██   ██ ██     ██     ${B}██████  ███████ ██████  \n"
+    printf ${G}"                                 Sawah Ladang Serta Ikan-ikannya \n"
+}
 pkg update -y && pkg upgrade
 pkg install x11-repo
 pkg install wget
