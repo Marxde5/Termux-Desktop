@@ -74,7 +74,7 @@ aterm -geometry 80x24+10+10 -ls &
 # Requires package 'xorg-twm'.
 twm &
 startxfce4 &" >> .vnc/xstartup
-    chmod +x .vnc/xstartu
+
     chmod +x .vnc/xstartup
 }
 
