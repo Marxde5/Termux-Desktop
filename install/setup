@@ -25,14 +25,14 @@ package() {
     if [[ `command -v xfce*` && `command -v tigervnc` && `command -v wget` ]]; then
         echo -e "\n${R} [${W}-${R}]${G} Packages already installed."${W}
     else
-        packs=(xfce* tigervnc  wget)
+        packs=(xfce* tigervnc  wget otter-browser)
         for hulu in "${packs[@]}"; do
             type -p "$hulu" &>/dev/null || {
                 echo -e "\n${R} [${W}-${R}]${G} Installing package : ${Y}$hulu${C}"${W}
-                apt update -y
-                apt upgrade -
-                apt install x11-repo -y
-                apt install "$hulu" -y
+                pkg update -y
+                pkg upgrade -y
+                pkg install x11-repo -y
+                pkg install "$hulu" -y
             }
         done
     fi
@@ -57,7 +57,7 @@ setupvnc() {
 	wget -q $link/xfce/vncstart -P $PREFIX/bin
 	chmod +x $PREFIX/bin/vncstart
 	wget -q $link/xfce/vncstop -P $PREFIX/bin
-	chmod +x $PREFIX/bin/vncsto
+	chmod +x $PREFIX/bin/vncstop
 	wget -q $link/xfce/vnc -P $PREFIX/bin
 	chmod +x $PREFIX/bin/vnc
     echo " "
